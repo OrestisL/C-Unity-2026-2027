@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     private InputAction _moveAction;
     private InputAction _runAction;
     
+    private PlayerAnimations _playerAnimations;
+
     [SerializeField]
     private Camera _mainCam;
 
@@ -25,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         Controller = GetComponent<CharacterController>();
+        _playerAnimations = GetComponent<PlayerAnimations>();
 
         _moveAction = InputSystem.actions.FindAction(InputNames.MOVE);
 
@@ -48,12 +51,15 @@ public class PlayerMovement : MonoBehaviour
         Move(move);
 
         ApplyGravity();
+        
+        _playerAnimations.SetJumping(Controller.isGrounded);
     }
 
     private void Move(Vector2 input)
     {
         if (input.sqrMagnitude <= 0.1f)
         {
+            _playerAnimations.SetSpeed(0);
             return;
         }
 
@@ -65,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
         transform.localRotation = Quaternion.Euler(0, angle, 0);
 
         float currentSpeed = _running ? RunSpeed : WalkSpeed;
+        _playerAnimations.SetSpeed(currentSpeed);
         //rotate forward to look direction
         Vector3 moveDirection = Quaternion.Euler(0, targetAngle, 0) * Vector3.forward * currentSpeed;
 

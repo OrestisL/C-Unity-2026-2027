@@ -15,4 +15,10 @@ namespace Constants
     {
     
     }
+
+    public static class AnimatorParams
+    {
+        public const string IS_GROUNDED = "Grounded";
+        public const string SPEED = "Speed";
+    }
 }
