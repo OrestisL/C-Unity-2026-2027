@@ -105,6 +105,16 @@
                     "interactions": "Hold",
                     "initialStateCheck": false,
                     "priority": 0
+                },
+                {
+                    "name": "Kick",
+                    "type": "Button",
+                    "id": "43f70857-988f-4358-b9ab-02ca75ac68f3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
                 }
             ],
             "bindings": [
@@ -490,6 +500,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "ShowHelp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c485886a-6cde-4fcb-85a4-959d7d50b2d5",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Kick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -8,6 +8,7 @@ namespace Constants
         public const string LOOK = "Look";
         public const string SCROLL = "ScrollWheel";
         public const string LEFT_CLICK = "Attack";
+        public const string RIGHT_CLICK = "Kick";
         public const string MOUSE_POSITION = "Point";
     }
 
@@ -20,5 +21,8 @@ namespace Constants
     {
         public const string IS_GROUNDED = "Grounded";
         public const string SPEED = "Speed";
+
+        public const string KICK = "Kick";
+        public const string PUNCH = "Punch";
     }
 }
